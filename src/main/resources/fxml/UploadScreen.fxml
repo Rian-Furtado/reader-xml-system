@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="768" prefWidth="1024" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UploadScreenController">
+
+    <!-- Top Menu -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-border-color: #f0f2f4; -fx-padding: 10 40 10 40; -fx-border-width: 0 0 1 0;">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="🔵" />
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #111418;" text="OpenXML" />
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="20" HBox.hgrow="ALWAYS">
+                <HBox spacing="20">
+                    <Button fx:id="homeButton" onAction="#onClickHomeButton" styleClass="nav-button" text="Home" />
+                    <Button fx:id="invoicesButton" styleClass="nav-button" text="Invoices" />
+                    <Button fx:id="settingsButton" styleClass="nav-button" text="Settings" />
+                    <Button fx:id="uploadFilesButton" styleClass="nav-button" text="Upload Files" />
+                    <Button fx:id="supportButton" styleClass="nav-button" text="Support" />
+                </HBox>
+
+                <Button fx:id="gitHubButton" styleClass="icon-button" text="?" />
+
+                <HBox spacing="10" />
+            </HBox>
+        </HBox>
+    </top>
+
+    <!-- Upload Content -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 30 80;">
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #111418;" text="Upload Your XML Files" />
+            <Label alignment="CENTER" maxWidth="641.0" prefHeight="20.0" prefWidth="641.0" style="-fx-text-fill: #111418; -fx-font-size: 14px;" text=" select files from your computer." wrapText="true" />
+
+            <VBox alignment="CENTER" spacing="10" styleClass="upload-area">
+                <Button fx:id="SelectFilesButton" onAction="#onClickSelectFilesButton" styleClass="secondary-rounded-button" text="Select Files" />
+            </VBox>
+
+            <!-- Progress Info -->
+            <VBox alignment="TOP_LEFT" maxWidth="600" spacing="6">
+                <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #111418;" text="Processing Files" />
+                <ProgressBar fx:id="progressBar" prefWidth="600" progress="0.0" style="-fx-accent: #111418;" />
+                <Label fx:id="progressLabel" style="-fx-text-fill: #637588; -fx-font-size: 12px;" text="0% Complete" />
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

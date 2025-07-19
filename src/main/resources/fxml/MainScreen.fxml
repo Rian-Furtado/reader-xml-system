@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="768" prefWidth="1024" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainSceneController">
+
+   <!-- Top Bar -->
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-border-color: #f0f2f4; -fx-padding: 10 40 10 40; -fx-border-width: 0 0 1 0;">
+         <HBox alignment="CENTER_LEFT" spacing="10">
+            <!-- Placeholder for logo SVG -->
+            <Label text="🔵" />
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #111418;" text="OpenXML" />
+         </HBox>
+         <HBox alignment="CENTER_RIGHT" spacing="20" HBox.hgrow="ALWAYS">
+            <HBox spacing="20">
+               <Button fx:id="homeButton" styleClass="nav-button" text="Home" />
+               <Button fx:id="invoicesButton" onAction="#onClickInvoicesButton" styleClass="nav-button" text="Invoices" />
+               <Button fx:id="settingsButton" styleClass="nav-button" text="Settings" />
+               <Button fx:id="uploadFilesButton" onAction="#onClickUploadFilesButton" styleClass="nav-button" text="Upload Files" />
+               <Button fx:id="supportButton" styleClass="nav-button" text="Support" />
+            </HBox>
+
+            <Button fx:id="gitHubButton" styleClass="icon-button" text="?" />
+
+<!--            <ImageView fitHeight="32" fitWidth="32">-->
+<!--               <image>-->
+<!--                  <Image preserveRatio="true" url="https://lh3.googleusercontent.com/..." />-->
+<!--               </image>-->
+<!--            </ImageView>-->
+         </HBox>
+      </HBox>
+   </top>
+
+   <!-- Main Content -->
+   <center>
+      <VBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 20 80;">
+         <Label style="-fx-font-size: 28px; -fx-font-weight: bold;" text="Invoice Overview" />
+
+         <!-- Status Cards -->
+         <FlowPane hgap="10" prefWrapLength="800" vgap="10">
+            <VBox prefWidth="150" spacing="5" style="-fx-background-color: #f0f2f4; -fx-padding: 15; -fx-border-radius: 5;">
+               <Label text="Authorized" />
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="120" />
+            </VBox>
+            <VBox prefWidth="150" spacing="5" style="-fx-background-color: #f0f2f4; -fx-padding: 15;">
+               <Label text="Cancelled" />
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="15" />
+            </VBox>
+            <VBox prefWidth="150" spacing="5" style="-fx-background-color: #f0f2f4; -fx-padding: 15;">
+               <Label text="Rejected" />
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="5" />
+            </VBox>
+            <VBox prefWidth="150" spacing="5" style="-fx-background-color: #f0f2f4; -fx-padding: 15;">
+               <Label text="Inutilized" />
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="2" />
+            </VBox>
+            <VBox prefWidth="150" spacing="5" style="-fx-background-color: #f0f2f4; -fx-padding: 15;">
+               <Label text="Contingency" />
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="8" />
+            </VBox>
+            <VBox prefWidth="150" spacing="5" style="-fx-background-color: #f0f2f4; -fx-padding: 15;">
+               <Label text="Total Invoices" />
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="150" />
+            </VBox>
+         </FlowPane>
+
+         <!-- Export Buttons -->
+         <VBox alignment="TOP_LEFT" spacing="10">
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Export Data" />
+            <HBox spacing="10">
+               <Button styleClass="export-button" text="Export XML" />
+               <Button styleClass="export-button" text="Export XLS" />
+            </HBox>
+         </VBox>
+
+         <!-- Search Section -->
+         <VBox alignment="TOP_LEFT" spacing="10">
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Search Invoices" />
+            <HBox spacing="10">
+               <TextField promptText="Search by Series or Number Range" />
+               <Button style="-fx-background-color: #197fe5; -fx-text-fill: white;" text="Search" />
+            </HBox>
+         </VBox>
+      </VBox>
+   </center>
+</BorderPane>
